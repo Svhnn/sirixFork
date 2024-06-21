@@ -3,8 +3,7 @@ package io.sirix.utils;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class CalcTest {
 
@@ -45,4 +44,50 @@ public class CalcTest {
         byte[] value2 = new byte[]{1, 1, 1, 1, 1, 1, 1, 2};
         assertEquals("The second value value should be 1 larger than the first", -1, Calc.compareLong(value1, value2));
     }
+
+    @Test
+    public void testFirstIfNullCheck() {
+        byte[] nullArray = null;
+        try {
+            Calc.toUIntVar(nullArray);
+            fail("Expected IllegalArgumentException was not thrown");
+        } catch (IllegalArgumentException e) {
+            assertEquals("Input byte array cannot be null", e.getMessage());
+            ToUIntVarCoverageTool.printCoverage();
+        }
+    }
+
+    @Test
+    public void testSecondIfLengthOne() {
+        byte[] byteArray = new byte[] { 0x7F };
+        int result = Calc.toUIntVar(byteArray);
+        assertEquals(0x7F, result);
+
+        ToUIntVarCoverageTool.printCoverage();
+    }
+
+    @Test
+    public void testThirdIfLengthTwo() {
+        byte[] byteArray = new byte[] { (byte) 0xFE, (byte) 0x01 };
+        int result = Calc.toUIntVar(byteArray);
+        assertEquals(0xFE01, result);
+        ToUIntVarCoverageTool.printCoverage();
+    }
+
+    @Test
+    public void testFourthIfLengthThree() {
+        byte[] byteArray = new byte[] { (byte) 0xAB, (byte) 0xCD, (byte) 0xEF };
+        int result =  Calc.toUIntVar(byteArray);
+        assertEquals(0xABCDEF, result);
+        ToUIntVarCoverageTool.printCoverage();
+    }
+
+    @Test
+    public void testFifthIfLengthGreaterThanThree() {
+        byte[] byteArray = new byte[] { (byte) 0x12, (byte) 0x34, (byte) 0x56, (byte) 0x78 };
+        int result = Calc.toUIntVar(byteArray);
+        assertEquals(0x12345678, result);
+        ToUIntVarCoverageTool.printCoverage();
+    }
+
 }

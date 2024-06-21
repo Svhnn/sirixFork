@@ -3,17 +3,17 @@ package io.sirix.utils;
 import java.util.HashMap;
 import java.util.Map;
 
-public class EqualsCoverageTool {
-
+public class ToUIntVarCoverageTool {
     // Data structure to hold coverage information
     public static Map<Integer, Boolean> branchCoverage = new HashMap<>();
 
     // Initialize coverage map with branch IDs
     static {
-        branchCoverage.put(1, false); // Branch 1: Fail if one is null.
-        branchCoverage.put(2, false); // Branch 2: Fail if the values are not of equal length.
-        branchCoverage.put(3, false); // Branch 3: Fail if a single byte does not match.
-        branchCoverage.put(4, false); // Branch 3: Values must be equal if we reach here.
+        branchCoverage.put(1, false); // Branch 1: B is null
+        branchCoverage.put(2, false); // Branch 2: B length is 1
+        branchCoverage.put(3, false); // Branch 3: B length is 2
+        branchCoverage.put(4, false); // Branch 4: B length is 3
+        branchCoverage.put(5, false); // Branch 4: B length is >3
     }
 
     public static void reset(){
@@ -21,6 +21,7 @@ public class EqualsCoverageTool {
         branchCoverage.put(2, false);
         branchCoverage.put(3, false);
         branchCoverage.put(4, false);
+        branchCoverage.put(5, false);
     }
 
     public static void printCoverage() {

@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import java.util.Arrays;
 
-public class BranchCoverageTest {
+public class BranchCoverageGetBytesTest {
     private static double totalCoverage = 0.0;
 
     @Test

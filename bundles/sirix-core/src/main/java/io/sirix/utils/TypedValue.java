@@ -204,6 +204,7 @@ public final class TypedValue {
       }
     }
     // Values must be equal if we reach here.
+    EqualsCoverageTool.branchCoverage.put(4, true);
     return true;
   }
 

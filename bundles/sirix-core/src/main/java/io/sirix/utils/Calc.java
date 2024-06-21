@@ -110,18 +110,23 @@ public final class Calc {
 
   public static int toUIntVar(byte[] b) {
     if (b == null) {
+      ToUIntVarCoverageTool.branchCoverage.put(1,true);
       throw new IllegalArgumentException(ERROR_MSG);
     }
     int len = b.length;
     if (len == 1) {
+      ToUIntVarCoverageTool.branchCoverage.put(2,true);
       return b[0] & 0xFF;
     }
     if (len == 2) {
+      ToUIntVarCoverageTool.branchCoverage.put(3,true);
       return ((b[0] & 0xFF) << 8) | b[1] & 0xFF;
     }
     if (len == 3) {
+      ToUIntVarCoverageTool.branchCoverage.put(4,true);
       return ((b[0] & 0xFF) << 16) | ((b[1] & 0xFF) << 8) | b[2] & 0xFF;
     }
+    ToUIntVarCoverageTool.branchCoverage.put(5,true);
     return ((b[0] & 0xFF) << 24) | ((b[1] & 0xFF) << 16) | ((b[2] & 0xFF) << 8) | b[3] & 0xFF;
   }
 

@@ -27,6 +27,7 @@ You can either run tests normally, debug them, or run them with coverage, which 
 <Show the coverage results provided by the existing tool with a screenshot>
 
 ![General Coverage SS](https://github.com/Svhnn/sirixFork/tree/main/images/general-coverage-ss.png)
+
 ![In Depth Coverage SS](https://github.com/Svhnn/sirixFork/tree/main/images/in-depth-coverage-ss.png)
 
 ### Your own coverage tool

@@ -25,6 +25,9 @@ import java.util.HashMap;
 import io.sirix.exception.SirixRuntimeException;
 import io.sirix.settings.Constants;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 
  * <p>
@@ -185,15 +188,18 @@ public final class TypedValue {
   public static boolean equals(final byte[] mValue1, final byte[] mValue2) {
     // Fail if one is null.
     if ((mValue1 == null) || (mValue2 == null)) {
+      EqualsCoverageTool.branchCoverage.put(1, true);
       return false;
     }
     // Fail if the values are not of equal length.
     if (mValue1.length != mValue2.length) {
+      EqualsCoverageTool.branchCoverage.put(2, true);
       return false;
     }
     // Fail if a single byte does not match.
     for (int i = 0, l = mValue1.length; i < l; i++) {
       if (mValue1[i] != mValue2[i]) {
+        EqualsCoverageTool.branchCoverage.put(3, true);
         return false;
       }
     }

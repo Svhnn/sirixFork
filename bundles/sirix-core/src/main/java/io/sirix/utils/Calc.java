@@ -127,16 +127,22 @@ public final class Calc {
 
   public static int toInt(byte[] b, int off, int len) {
     if (len == 1) {
+      ToIntCoverage.branchCoverage.put("first_if_statement", true);
       return b[off] & 0xFF;
     }
     if (len == 2) {
+      ToIntCoverage.branchCoverage.put("second_if_statement", true);
       return ((b[off++] & 0xFF) << 8) | b[off] & 0xFF;
     }
     if (len == 3) {
+      ToIntCoverage.branchCoverage.put("third_if_statement", true);
       return ((b[off++] & 0xFF) << 16) | ((b[off++] & 0xFF) << 8) | b[off++] & 0xFF;
     }
-    return ((b[off++] & 0xFF) << 24) | ((b[off++] & 0xFF) << 16) | ((b[off++] & 0xFF) << 8)
-        | b[off] & 0xFF;
+    else {
+      ToIntCoverage.branchCoverage.put("else_statement", true);
+      return ((b[off++] & 0xFF) << 24) | ((b[off++] & 0xFF) << 16) | ((b[off++] & 0xFF) << 8)
+              | b[off] & 0xFF;
+    }
   }
 
   public static byte[] fromUIntVar(int i) {

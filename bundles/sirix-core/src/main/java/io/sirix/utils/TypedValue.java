@@ -20,6 +20,7 @@
  */
 
 package io.sirix.utils;
+import java.util.HashMap;
 
 import io.sirix.exception.SirixRuntimeException;
 import io.sirix.settings.Constants;
@@ -90,11 +91,15 @@ public final class TypedValue {
    * @param mValue Boolean to encode as UTF-8 byte array.
    * @return UTF-8-encoded byte array of boolean.
    */
+
+
   public static byte[] getBytes(final boolean mValue) {
     final byte[] bytes = new byte[1];
     if (mValue) {
+      GetBytesCoverage.branchCoverage.put("mValue_true", true);
       bytes[0] = 1;
     } else {
+      GetBytesCoverage.branchCoverage.put("mValue_false", true);
       bytes[0] = 0;
     }
     return bytes;

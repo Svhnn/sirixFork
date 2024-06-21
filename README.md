@@ -26,8 +26,8 @@ You can either run tests normally, debug them, or run them with coverage, which 
 
 <Show the coverage results provided by the existing tool with a screenshot>
 
-![Alt text](https://github.com/Svhnn/sirixFork/tree/main/images/general-coverage-ss.png)
-![Alt text](https://github.com/Svhnn/sirixFork/tree/main/images/in-depth-coverage-ss.png)
+![General Coverage SS](https://github.com/Svhnn/sirixFork/tree/main/images/general-coverage-ss.png)
+![In Depth Coverage SS](https://github.com/Svhnn/sirixFork/tree/main/images/in-depth-coverage-ss.png)
 
 ### Your own coverage tool
 
@@ -44,7 +44,7 @@ https://github.com/sirixdb/sirix/commit/49243c156d3480a46da1a6abc4e5cb0a349df6a1
 
 <Provide a screenshot of the coverage results output by the instrumentation>
 
-![Alt text](https://github.com/Svhnn/sirixFork/tree/main/images/getBytes-coverage-result.png)
+![getBytes Coverage SS](https://github.com/Svhnn/sirixFork/tree/main/images/getBytes-coverage-result.png)
 
 <Function 2 name>
 
@@ -56,7 +56,7 @@ https://github.com/sirixdb/sirix/commit/49243c156d3480a46da1a6abc4e5cb0a349df6a1
 
 <The following is supposed to be repeated for each group member>
 
-<Group member name>
+[//]: # (<Group member name>)
 
 <Test 1>
 
@@ -64,9 +64,9 @@ https://github.com/sirixdb/sirix/commit/49243c156d3480a46da1a6abc4e5cb0a349df6a1
 
 <Provide a screenshot of the old coverage results (the same as you already showed above)>
 
-<Provide a screenshot of the new coverage results>
+[//]: # (<Provide a screenshot of the new coverage results>)
 
-<State the coverage improvement with a number and elaborate on why the coverage is improved>
+[//]: # (<State the coverage improvement with a number and elaborate on why the coverage is improved>)
 
 <Test 2>
 
@@ -76,7 +76,7 @@ https://github.com/sirixdb/sirix/commit/49243c156d3480a46da1a6abc4e5cb0a349df6a1
 
 <Provide a screenshot of the old coverage results by running an existing tool (the same as you already showed above)>
 
-<Provide a screenshot of the new coverage results by running the existing tool using all test modifications made by the group>
+[//]: # (<Provide a screenshot of the new coverage results by running the existing tool using all test modifications made by the group>)
 
 ## Statement of individual contributions
 

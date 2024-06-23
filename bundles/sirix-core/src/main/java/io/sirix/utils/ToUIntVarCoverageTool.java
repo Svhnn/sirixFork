@@ -6,6 +6,7 @@ import java.util.Map;
 public class ToUIntVarCoverageTool {
     // Data structure to hold coverage information
     public static Map<Integer, Boolean> branchCoverage = new HashMap<>();
+    private static double totalCoverage = 0.0;
 
     // Initialize coverage map with branch IDs
     static {
@@ -31,6 +32,33 @@ public class ToUIntVarCoverageTool {
             boolean hit = entry.getValue();
             System.out.printf("Branch %d: %s%n", branchId, hit ? "Hit" : "Not Hit");
         }
+        printCoveragePercentage();
+        reset();
+    }
+
+    public static void printCoveragePercentage() {
+        int totalTests = 5;
+
+        int coveredBranches = 0;
+        if (ToUIntVarCoverageTool.branchCoverage.get(1)) {
+            coveredBranches++;
+        }
+        if (ToUIntVarCoverageTool.branchCoverage.get(2)) {
+            coveredBranches++;
+        }
+        if (ToUIntVarCoverageTool.branchCoverage.get(3)) {
+            coveredBranches++;
+        }
+        if (ToUIntVarCoverageTool.branchCoverage.get(4)) {
+            coveredBranches++;
+        }
+        if (ToUIntVarCoverageTool.branchCoverage.get(5)) {
+            coveredBranches++;
+        }
+        double coveragePercentage = (double) coveredBranches / totalTests * 100;
+        totalCoverage += coveragePercentage;
+        System.out.printf("Coverage Percentage current Branch: %.2f%%\n", coveragePercentage);
+        System.out.printf("Coverage Percentage Total: %.2f%% \n", totalCoverage);
         reset();
     }
 }

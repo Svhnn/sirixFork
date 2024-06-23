@@ -233,13 +233,26 @@ public final class Array {
    * @return result of check
    */
   public static boolean equals(final Object[] arr1, final Object[] arr2) {
-    if(arr1 == arr2) return true;
-    if(arr1 == null || arr2 == null) return false;
-    final int al = arr1.length;
-    if(al != arr2.length) return false;
-    for(int a = 0; a < al; a++) {
-      if(!Objects.equals(arr1[a], arr2[a])) return false;
+    if(arr1 == arr2) {
+      BranchCoverageArrayTool.branchCoverage.put(1,true);
+      return true;
     }
+    if(arr1 == null || arr2 == null) {
+      BranchCoverageArrayTool.branchCoverage.put(2,true);
+      return false;
+    }
+    final int al = arr1.length;
+    if(al != arr2.length) {
+      BranchCoverageArrayTool.branchCoverage.put(3, true); // Branch 3
+      return false;
+    }
+    for(int a = 0; a < al; a++) {
+      if(!Objects.equals(arr1[a], arr2[a])) {
+        BranchCoverageArrayTool.branchCoverage.put(4, true); // Branch 4
+        return false;
+      }
+    }
+    BranchCoverageArrayTool.branchCoverage.put(5, true); // Branch 5
     return true;
   }
 }

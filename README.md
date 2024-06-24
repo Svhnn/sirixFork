@@ -48,6 +48,25 @@ https://github.com/sirixdb/sirix/commit/e48b78d9065111d31efaac3b6220715ab03b9ecf
 Screenshot of coverage result by output: <br/>
 <img src="images/ToInt-coverage-output.png" width="400" />
 
+**_Group member 2:_** Duarte <br/>
+**Function 1**: FromUintVar in io/sirix/utils/Calc.java
+
+Commits: <br/>
+https://github.com/sirixdb/sirix/commit/9ddac81194e55e87767dd93e3928dd9377790038 <br/>
+https://github.com/sirixdb/sirix/commit/3cf1127d8070d23c8d8dc2000f9867f08d60229f <br/>
+Initially used the coverage tool developed by Simao for the ToUintVar function, since it shared a lot of similarities. <br/>
+Ended up creating a copy of it and dedicating it entirely for the FromUintVar, ensuring that the calculated branch coverage was correct. <br/>
+These commits include both the tool and the tests used.
+
+Screenshot of coverage result by output: <br/>
+<img src="images/fromUintVar results.png" width="400" />
+
+**Function 2**: Equals in io/sirix/utils/Array.java <br/>
+Commits: <br/>
+https://github.com/sirixdb/sirix/commit/88801e85bf26fd12f51441f85efb2eff6aad24c0 <br/>
+Screenshot of coverage result by output: <br/>
+<img src="images/ArrayTestCoverageResult.png" width="400" />
+
 
 ## Coverage improvement
 
@@ -89,6 +108,36 @@ function. The coverage going up by 6 makes sense, because there's 3 if statement
 some of them don't necessarily have an else, except for the last statement. So twice the if statements which have an
 invisible else so 2 x 2 plus the final if + else statements is 4 + 2 = 6.
 
+**_Group member 2:_** Duarte <br/>
+**Test 1**: <br/>
+
+Commits: <br/>
+https://github.com/sirixdb/sirix/commit/9ddac81194e55e87767dd93e3928dd9377790038 <br/>
+https://github.com/sirixdb/sirix/commit/3cf1127d8070d23c8d8dc2000f9867f08d60229f <br/>
+Same as before, due to the fact that both include the tool and test as mentioned before. <br/>
+
+Old coverage report: <br/>
+<img src="images/CoverageCalcBefore.png" width="600" /> <br/>
+
+New coverage report: <br/>
+<img src="images/CoverageCalcAfter.png" width="600" /> <br/>
+
+Coverage improvement: 8, by 8%. Tests have been devised to check all the different branches within the FromUintVar function.
+The improvement by 8% makes sense due to the fact that there exist 100 different branches and my tests cover 8 of those,
+hence the increase.
+
+**Test 2**: <br/>
+Commits: <br/>
+https://github.com/sirixdb/sirix/commit/88801e85bf26fd12f51441f85efb2eff6aad24c0 <br/>
+
+Old coverage report: <br/>
+<img src="images/CoverageCalcBefore.png" width="600" /> <br/>
+
+New coverage report: <br/>
+<img src="images/CoverageArrayAfter.png" width="600" /> <br/>
+
+Coverage improvement: 12, by 66%. Tests have been devised to check all the different branches within the Equals function in the io/sirix/utils/Array.java.
+The improvement is so drastic due to the fact that there isn't to many branches hence the increase.
 ### Overall
 
 Old coverage report: <br/>
@@ -110,7 +159,13 @@ are checking whether the true and false inputs are being covered correctly insid
 calculates the total amount of branch coverage by taking the number of hits and inputs. Did essentially the same for
 the toInt function, the only difference here is that there's 4 different branches, 3 ifs and one else, made the same
 type of files for toInt as for getByte but with different names. Checked the length and output correspondence with
-4 assertions with different inputs. Also did all of the general README information. <br/>
+4 assertions with different inputs. Also did all the general README information. <br/>
 
-
+Group member 2, Duarte: <br/>
+Sifted through 15+ projects in python in hopes of finding one both easy to understand and implement our tests.
+After spotting a mistake with Simao, from our colleague we were forced to change the project since the initial reading of 
+NLOC was wrong, due to it also reading environment parameters. From there I dedicated my time to understand how and why 
+it was relevant to increase the coverage of the branches. Once that was done  I chose two  functions, the equals in Array 
+and FromUintVar in Calc. Created individual tools for both of the functions, to measure the coverage along with creating 
+tests for each of these. The coverage tool I used was based upon Simao's tool, hence the similarities.
 

@@ -68,6 +68,29 @@ Screenshot of coverage result by output: <br/>
 <img src="images/ArrayTestCoverageResult.png" width="400" />
 
 
+**_Group member 3:_** João Simão , Student Nr 2756702 <br/>
+**Function 1**: equals(...) in io/sirix/utils/TypedValue.java
+
+The function has 4 if-else-branches + for loop.
+
+Commits: <br/>
+https://github.com/Svhnn/sirixFork/commit/f2c89cbf5e0c3ba3a987f93e7ccc389675f05e73 <br/> 
+
+
+Screenshot of coverage result by output: <br/>
+<img src="images/Equals-Coverage-Report.png" width="400" />
+
+**Function 2**: toUIntVar(byte[] b) in io/sirix/utils/Calc.java<br/>
+
+The function has 5 branches.
+
+Commits: <br/>
+https://github.com/Svhnn/sirixFork/commit/c33bf964650d5bc57c0892bd5befbc8f36267a00
+
+Screenshot of coverage result by output: <br/>
+<img src="images/ToUInt-coverage-output1.png" width="400" />
+<img src="images/ToUInt-coverage-output2.png" width="400" />
+
 ## Coverage improvement
 
 ### Individual tests
@@ -108,6 +131,7 @@ function. The coverage going up by 6 makes sense, because there's 3 if statement
 some of them don't necessarily have an else, except for the last statement. So twice the if statements which have an
 invisible else so 2 x 2 plus the final if + else statements is 4 + 2 = 6.
 
+<<<<<<< Updated upstream
 **_Group member 2:_** Duarte <br/>
 **Test 1**: <br/>
 
@@ -138,6 +162,39 @@ New coverage report: <br/>
 
 Coverage improvement: 12, by 66%. Tests have been devised to check all the different branches within the Equals function in the io/sirix/utils/Array.java.
 The improvement is so drastic due to the fact that there isn't to many branches hence the increase.
+=======
+**_Group member 3:_** João Simão , Student Nr 2756702 <br/>
+**Test 1**:
+
+Commits: <br/>
+https://github.com/Svhnn/sirixFork/commit/f2c89cbf5e0c3ba3a987f93e7ccc389675f05e73 <br/>
+
+Old coverage report: <br/>
+<img src="images/general-coverage-ss.png" width="600" /> <br/>
+
+New coverage report: <br/>
+<img src="images/equals-coverage-after.png" width="600" /> <br/>
+
+Coverage improvement: 5, by 25%. The reason the coverage has been improved, is because tests have been made to check the
+possible inputs for the function. Assertions to test when one of the inputs is null, when they have unequal lenghts,
+when the inputs are different and when they are equal. The function had 0% coverage and was improved to have 100% coverage.
+
+**Test 2**
+
+Commits: <br/>
+https://github.com/Svhnn/sirixFork/commit/c33bf964650d5bc57c0892bd5befbc8f36267a00 <br/>
+
+Old coverage report: <br/>
+<img src="images/general-coverage-ss.png" width="600" /> <br/>
+
+New coverage report: <br/>
+<img src="images/ToUInt-coverage-after.png" width="600" /> <br/>
+
+Coverage improvement: 8, by 8%. The reason the coverage has been improved, is because tests have been made to check the
+possible inputs for the function. Assertions to test if input is null, if length is on, if length is two, if length is 3
+and if it is greater than 3. The function had 0% coverage and was improved to have 100% coverage.
+
+>>>>>>> Stashed changes
 ### Overall
 
 Old coverage report: <br/>
@@ -159,6 +216,7 @@ are checking whether the true and false inputs are being covered correctly insid
 calculates the total amount of branch coverage by taking the number of hits and inputs. Did essentially the same for
 the toInt function, the only difference here is that there's 4 different branches, 3 ifs and one else, made the same
 type of files for toInt as for getByte but with different names. Checked the length and output correspondence with
+<<<<<<< Updated upstream
 4 assertions with different inputs. Also did all the general README information. <br/>
 
 Group member 2, Duarte: <br/>
@@ -168,4 +226,14 @@ NLOC was wrong, due to it also reading environment parameters. From there I dedi
 it was relevant to increase the coverage of the branches. Once that was done  I chose two  functions, the equals in Array 
 and FromUintVar in Calc. Created individual tools for both of the functions, to measure the coverage along with creating 
 tests for each of these. The coverage tool I used was based upon Simao's tool, hence the similarities.
+=======
+4 assertions with different inputs. Also did all of the general README information. <br/>
+
+Group member 3, Simão <br/>
+Looked for different python projects with my teammates. Organised calls and meetings in uni so that we could work 
+together as a group. I worked on two different functions as stated above and improved the README file.
+Created individual tools for each function. Measured the coverage with the printing and the built-in coverage tool.
+I also tried to keep all members at the same understanding level, since we found the assignment to be confusing at first.
+
+>>>>>>> Stashed changes
 

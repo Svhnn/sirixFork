@@ -123,4 +123,6 @@ public class CalcTest {
                 (byte) ((i5 >> 8) & 0xFF), (byte) i5}, result);
         FromUintVarCoverageTool.printCoverage();
     }
+
+
 }

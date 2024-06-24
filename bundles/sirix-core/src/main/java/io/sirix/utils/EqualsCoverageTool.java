@@ -7,6 +7,7 @@ public class EqualsCoverageTool {
 
     // Data structure to hold coverage information
     public static Map<Integer, Boolean> branchCoverage = new HashMap<>();
+    private static double totalCoverage = 0.0;
 
     // Initialize coverage map with branch IDs
     static {
@@ -23,6 +24,30 @@ public class EqualsCoverageTool {
         branchCoverage.put(4, false);
     }
 
+    public static void printCoveragePercentage() {
+        int totalTests = 4;
+
+        int coveredBranches = 0;
+        if (EqualsCoverageTool.branchCoverage.get(1)) {
+            coveredBranches++;
+        }
+        if (EqualsCoverageTool.branchCoverage.get(2)) {
+            coveredBranches++;
+        }
+        if (EqualsCoverageTool.branchCoverage.get(3)) {
+            coveredBranches++;
+        }
+        if (EqualsCoverageTool.branchCoverage.get(4)) {
+            coveredBranches++;
+        }
+
+        double coveragePercentage = (double) coveredBranches / totalTests * 100;
+        totalCoverage += coveragePercentage;
+        System.out.printf("Coverage Percentage current Branch: %.2f%%\n", coveragePercentage);
+        System.out.printf("Coverage Percentage Total: %.2f%% \n", totalCoverage);
+        reset();
+    }
+
     public static void printCoverage() {
         System.out.println("Coverage Information:");
         for (Map.Entry<Integer, Boolean> entry : branchCoverage.entrySet()) {
@@ -30,6 +55,7 @@ public class EqualsCoverageTool {
             boolean hit = entry.getValue();
             System.out.printf("Branch %d: %s%n", branchId, hit ? "Hit" : "Not Hit");
         }
+        printCoveragePercentage();
         reset();
     }
 }

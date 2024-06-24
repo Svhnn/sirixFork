@@ -96,31 +96,31 @@ public class CalcTest {
         int i1 = 0xFF; // 255
         byte[] result1 = Calc.fromUIntVar(i1);
         assertArrayEquals(new byte[] {(byte) i1}, result1);
-        ToUIntVarCoverageTool.printCoverage();
+        FromUintVarCoverageTool.printCoverage();
 
         // Test for i & 0xFFFF0000 == 0
         int i2 = 0xFFFF; // 65535
         byte[] result2 = Calc.fromUIntVar(i2);
         assertArrayEquals(new byte[] {(byte) ((i2 >> 8) & 0xFF), (byte) i2}, result2);
-        ToUIntVarCoverageTool.printCoverage();
+        FromUintVarCoverageTool.printCoverage();
 
         // Test for i & 0xFF000000 == 0
         int i3 = 0xFF0000; // 16711680
         byte[] result3 = Calc.fromUIntVar(i3);
         assertArrayEquals(new byte[] {(byte) ((i3 >> 16) & 0xFF), (byte) (0), (byte) i3}, result3);
-        ToUIntVarCoverageTool.printCoverage();
+        FromUintVarCoverageTool.printCoverage();
 
         int i4 = -1;
         try {
             Calc.fromUIntVar(i4);
             fail("Expected IllegalArgumentException");
         } catch (IllegalArgumentException ignored) {}
-        ToUIntVarCoverageTool.printCoverage();
+        FromUintVarCoverageTool.printCoverage();
 
         int i5 = Integer.MAX_VALUE;
         byte[] result = Calc.fromUIntVar(i5);
         assertArrayEquals(new byte[] {(byte) ((i5 >> 24) & 0xFF), (byte) ((i5 >> 16) & 0xFF),
                 (byte) ((i5 >> 8) & 0xFF), (byte) i5}, result);
-        ToUIntVarCoverageTool.printCoverage();
+        FromUintVarCoverageTool.printCoverage();
     }
 }

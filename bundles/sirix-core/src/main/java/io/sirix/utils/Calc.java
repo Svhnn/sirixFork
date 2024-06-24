@@ -152,22 +152,22 @@ public final class Calc {
 
   public static byte[] fromUIntVar(int i) {
     if ((i & 0xFFFFFF00) == 0) {
-      ToUIntVarCoverageTool.branchCoverage.put(1,true);
+      FromUintVarCoverageTool.branchCoverage.put(1,true);
       return new byte[] {(byte) i};
     }
     if ((i & 0xFFFF0000) == 0) {
-      ToUIntVarCoverageTool.branchCoverage.put(2,true);
+      FromUintVarCoverageTool.branchCoverage.put(2,true);
       return new byte[] {(byte) ((i >> 8) & 0xFF), (byte) i};
     }
     if ((i & 0xFF000000) == 0) {
-      ToUIntVarCoverageTool.branchCoverage.put(3,true);
+      FromUintVarCoverageTool.branchCoverage.put(3,true);
       return new byte[] {(byte) ((i >> 16) & 0xFF), (byte) ((i >> 8) & 0xFF), (byte) i};
     }
     if (i < 0) {
-      ToUIntVarCoverageTool.branchCoverage.put(4,true);
+      FromUintVarCoverageTool.branchCoverage.put(4,true);
       throw new IllegalArgumentException(String.valueOf(i));
     }
-    ToUIntVarCoverageTool.branchCoverage.put(5,true);
+    FromUintVarCoverageTool.branchCoverage.put(5,true);
     return new byte[] {(byte) ((i >> 24) & 0xFF), (byte) ((i >> 16) & 0xFF),
         (byte) ((i >> 8) & 0xFF), (byte) i};
   }

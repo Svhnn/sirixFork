@@ -199,7 +199,7 @@ Old coverage report: <br/>
 <img src="images/general-coverage-ss.png" width="600" /> <br/>
 
 New coverage report: <br/>
-INSERT SS OF NEW COVERAGE WITH ALL TEST MODIFICATIONS FROM THE GROUP DON'T FORGET.
+<img src="images/NewCoverage.png" width="600" /> <br/>
 
 ## Statement of individual contributions
 

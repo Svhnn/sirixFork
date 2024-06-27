@@ -135,16 +135,22 @@ public final class Calc {
       ToIntCoverage.branchCoverage.put("first_if_statement", true);
       return b[off] & 0xFF;
     }
+    else {
+      ToIntCoverage.branchCoverage.put("first_invisible_else", true);
+    }
     if (len == 2) {
       ToIntCoverage.branchCoverage.put("second_if_statement", true);
       return ((b[off++] & 0xFF) << 8) | b[off] & 0xFF;
+    }
+    else {
+      ToIntCoverage.branchCoverage.put("second_invisible_else", true);
     }
     if (len == 3) {
       ToIntCoverage.branchCoverage.put("third_if_statement", true);
       return ((b[off++] & 0xFF) << 16) | ((b[off++] & 0xFF) << 8) | b[off++] & 0xFF;
     }
     else {
-      ToIntCoverage.branchCoverage.put("else_statement", true);
+      ToIntCoverage.branchCoverage.put("visible_else_statement", true);
       return ((b[off++] & 0xFF) << 24) | ((b[off++] & 0xFF) << 16) | ((b[off++] & 0xFF) << 8)
               | b[off] & 0xFF;
     }

@@ -7,8 +7,10 @@ public class ToIntCoverage {
     static {
         branchCoverage = new HashMap<>();
         branchCoverage.put("first_if_statement", false);
+        branchCoverage.put("first_invisible_else", false);
         branchCoverage.put("second_if_statement", false);
+        branchCoverage.put("second_invisible_else", false);
         branchCoverage.put("third_if_statement", false);
-        branchCoverage.put("else_statement", false);
+        branchCoverage.put("visible_else_statement", false);
     }
 }

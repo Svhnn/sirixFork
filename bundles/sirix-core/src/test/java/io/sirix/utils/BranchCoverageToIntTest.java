@@ -55,17 +55,24 @@ public class BranchCoverageToIntTest {
 
     private void getCurrentBranchCoverage() {
         boolean coverageValue1 = ToIntCoverage.branchCoverage.get("first_if_statement");
-        boolean coverageValue2 = ToIntCoverage.branchCoverage.get("second_if_statement");
-        boolean coverageValue3 = ToIntCoverage.branchCoverage.get("third_if_statement");
-        boolean coverageValue4 = ToIntCoverage.branchCoverage.get("else_statement");
-        printCoverageValues(coverageValue1, coverageValue2, coverageValue3, coverageValue4);
+        boolean coverageValue2 = ToIntCoverage.branchCoverage.get("first_invisible_else");
+        boolean coverageValue3 = ToIntCoverage.branchCoverage.get("second_if_statement");
+        boolean coverageValue4 = ToIntCoverage.branchCoverage.get("second_invisible_else");
+        boolean coverageValue5 = ToIntCoverage.branchCoverage.get("third_if_statement");
+        boolean coverageValue6 = ToIntCoverage.branchCoverage.get("visible_else_statement");
+
+        printCoverageValues(coverageValue1, coverageValue2, coverageValue3, coverageValue4,
+                            coverageValue5, coverageValue6);
     }
 
-    private void printCoverageValues(boolean value1, boolean value2, boolean value3, boolean value4) {
+    private void printCoverageValues(boolean value1, boolean value2, boolean value3, boolean value4,
+                                     boolean value5, boolean value6) {
         System.out.printf("Coverage Value for first_if_statement is: %b \n", value1);
-        System.out.printf("Coverage Value for second_if_statement is: %b \n", value2);
-        System.out.printf("Coverage Value for third_if_statement is: %b \n", value3);
-        System.out.printf("Coverage Value for else_statement is: %b \n", value4);
+        System.out.printf("Coverage Value for first_invisible_else is: %b \n", value2);
+        System.out.printf("Coverage Value for second_if_statement is: %b \n", value3);
+        System.out.printf("Coverage Value for second_invisible_else is: %b \n", value4);
+        System.out.printf("Coverage Value for third_if_statement is: %b \n", value5);
+        System.out.printf("Coverage Value for visible_else_statement is: %b \n", value6);
     }
     private void printCoveragePercentage() {
         int totalTests = 4;
@@ -80,7 +87,7 @@ public class BranchCoverageToIntTest {
         if (ToIntCoverage.branchCoverage.get("third_if_statement")) {
             coveredBranches++;
         }
-        if (ToIntCoverage.branchCoverage.get("else_statement")) {
+        if (ToIntCoverage.branchCoverage.get("visible_else_statement")) {
             coveredBranches++;
         }
         double coveragePercentage = (double) coveredBranches / totalTests * 100;
@@ -92,8 +99,10 @@ public class BranchCoverageToIntTest {
 
     private void resetCoverageValues() {
         ToIntCoverage.branchCoverage.put("first_if_statement", false);
+        ToIntCoverage.branchCoverage.put("first_invisible_else", false);
         ToIntCoverage.branchCoverage.put("second_if_statement", false);
+        ToIntCoverage.branchCoverage.put("second_invisible_else", false);
         ToIntCoverage.branchCoverage.put("third_if_statement", false);
-        ToIntCoverage.branchCoverage.put("else_statement", false);
+        ToIntCoverage.branchCoverage.put("visible_else_statement", false);
     }
 }
